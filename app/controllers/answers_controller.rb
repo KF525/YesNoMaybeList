@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(params.require(:answer).permit(:name, :notes, :status))
-    user_relationship = User_relationship.find()
+    user_relationship = UserRelationship.find()
     @answer.user_relationship_id = user_relationship.id
     if @answer.save
       redirect_to relationship_path
