@@ -16,9 +16,9 @@
 
 body {
   font-size: 100%;
-  font-color: #444;
+  color: #E2BC30;
   font-family: 'Cedarville Cursive', cursive;
-  /*background-image: url(wood-table.jpg);*/
+  background-image: url(dark-wood-background.jpg);
 }
 
 .paper {
@@ -31,16 +31,19 @@ body {
 h1 {
   font-size: 150%;
   font-family: Futura, Helvetica;
+  color: #E2BC30;
 }
 
 h2 {
   font-size: 125%;
   font-family: Futura, Helvetica;
+  color: #E2BC30;
 }
 
 h3 {
   font-size: 100%;
   font-family: Futura, Helvetica;
+  color: #E2BC30;
 }
 .gray-back {
   opacity: .5;
@@ -61,7 +64,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: black;
+  color: #E2BC30;
 }
 
 /* BUTTONS */
