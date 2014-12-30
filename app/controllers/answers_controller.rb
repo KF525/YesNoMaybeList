@@ -1,8 +1,7 @@
 class AnswersController < ApplicationController
 
   def new
-    activity= Activity.find(params[:id])
-    @activity_name = activity.name
+    @activity= Activity.find(params[:activity_id])
     @answer = Answer.new
   end
 

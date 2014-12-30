@@ -18,24 +18,15 @@ Rails.application.routes.draw do
   patch 'reset_password',               to: 'password_resets#update'
   get 'reset_password/:id/edit',        to: 'password_resets#edit',       as: :edit_password_reset
 
-
   #ACTIVITIES
   get 'activities',                     to: 'activities#index',           as: :activities
   post 'activities',                    to: 'activities#create',          as: :add_activity
   delete 'activities',                  to: 'activities#destroy',         as: :remove_activity
 
-  #RELATIONSHIPS
-  post 'relationships',                 to: 'relationships#create',       as: :new_relationship
-  get 'relationships/:id',              to: 'relationships#show',         as: :relationship
+  resources :relationships, only: [:show, :create], shallow: true do
+    resources :answers
 
-  #ANSWERS
-  get 'answers/:id',                    to: 'answers#new',                 as: :new_answer
-  post 'answers/:id',                   to: 'answers#create',              as: :create_answer
-  get 'answers/:id',                    to: 'answers#show',                as: :answer
-  patch 'answers/:id',                  to: 'answers#update',              as: :update_answer
-  delete 'answers/:id',                 to: 'answers#destroy',             as: :delete_answer
-
-
+  end
 
 
   #resources :password_resets
