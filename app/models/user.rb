@@ -31,4 +31,9 @@ class User < ActiveRecord::Base
   def user_is_admin?
     self.admin
   end
+
+  def self.user_relationships(current_user)
+    UserRelationship.where(user_id: current_user.id)
+  end
+
 end
