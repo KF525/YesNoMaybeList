@@ -109,4 +109,5 @@ thead {
 a.disabled {
     pointer-events: none;
     cursor: default;
+    text-decoration: line-through;
 }

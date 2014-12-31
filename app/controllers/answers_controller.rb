@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
   end
 
   def show
-    @answer = Answer.find(params[:id])
+    @answer = Answer.find(params[:answer_id])
   end
 
   def edit

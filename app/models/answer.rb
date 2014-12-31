@@ -9,5 +9,4 @@ class Answer < ActiveRecord::Base
     end
     relationship_answers.flatten
   end
-
 end
