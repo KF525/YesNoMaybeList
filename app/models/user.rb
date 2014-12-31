@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
     self.admin
   end
 
-  def self.user_relationships(current_user) #returns all users user_relationships
+  def self.user_relationships(current_user) #finds all user_relationships associated with user
     UserRelationship.where(user_id: current_user.id)
   end
 

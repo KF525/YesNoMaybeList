@@ -14,7 +14,7 @@ class Answer < ActiveRecord::Base
     UserRelationship.find_by(relationship_id: relationship_id)
   end
 
-  def answered_by_current_user?(current_user, relationship_id)
+  def answered_by_current_user?(current_user, relationship_id) #checks if answer was entered by current_user
     user_relationship(relationship_id).user_id == current_user.id
   end
 end

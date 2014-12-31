@@ -1,5 +1,6 @@
 <!-- show all partners names with correct grammatical syntax-->
 <!-- show only if one user is associated with the list allow to invite another user to join list -->
+<%= @relationship.belongs_to_current_user?(params[:id], current_user) %>
 <div class="desk container">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-4">
