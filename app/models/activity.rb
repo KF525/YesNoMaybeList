@@ -4,8 +4,10 @@ class Activity < ActiveRecord::Base
 
   def self.not_answered(relationship_id)
     @answers = Answer.relationship_answers(relationship_id)
-    # @answers.each do |answer|
-    #   Activity.where.not()#all activities that haven't been answered: Activity.where.not(name:
-    # end
+    not_answered = []
+    @answers.each do |answer|
+      not_answered << Activity.all.where.not(name: answer.name)
+    end
+    raise
   end
 end
