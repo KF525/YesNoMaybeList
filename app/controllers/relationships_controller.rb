@@ -14,13 +14,12 @@ class RelationshipsController < ApplicationController
   end
 
   def show
-    #bug with user_relationship here
     @relationship = Relationship.find(params[:id])
     @partners = User.partners(params[:id])
     @answers = Answer.relationship_answers(params[:id])
     #@activities = Activity.not_answered(params[:id])
     @activities = Activity.all
-    #raise
+
   end
 
   def destroy
