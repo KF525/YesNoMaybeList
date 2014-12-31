@@ -1,44 +1,53 @@
 <!-- show all partners names with correct grammatical syntax-->
 <!-- show only if one user is associated with the list allow to invite another user to join list -->
-
-<h1>The Yes, No, Maybe List</h1>
-Invite your partner!
-<%= form_tag password_reset_path, method: :post do %>
-    <%= text_field_tag :email, params[:email], placeholder: "Partner's Email" %>
-    <%= submit_tag "Send Email" %>
-<% end %>
-
-<div class="paper">
-    <table>
-      <thead>
-      <% @partners.each do |partner| %>
-        <tr class="partners"> <!-- This should be jquery-->
-          <td><%= partner.name %></td>
-        </tr>
-      <% end %>
-      </thead>
-      <tbody>
+<div class="desk container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    <h1>The Yes, No, Maybe List</h1>
+    Invite your partner!
+    <%= form_tag password_reset_path, method: :post do %>
+        <%= text_field_tag :email, params[:email], placeholder: "Partner's Email" %>
+        <%= submit_tag "Invite", class: "btn" %>
+    <% end %>
+    </div>
+  </div>
+  <div class="row paper table-responsive">
+    <div class="col-lg-8 col-m-8 col-sm-8">
+      <table class="table">
+        <thead>
+        <% @partners.each do |partner| %>
+          <tr class="partners">
+            <td><%= partner.name %></td>
+          </tr>
+        <% end %>
+        </thead>
+        <tbody>
           <% unless @answers.empty? %>
               <% @answers.each do |answer| %>
               <tr class="answers">
                   <td>
-                    <%= answer.name %>
-                    <%= answer.status %>
-                    <% if current_user %>
-                        <%= link_to "Edit Answer", edit_answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
-                    <% end %>
+                    <%= answer.name %>:
+                    <%= link_to answer.status, answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
                   </td>
               </tr>
               <% end %>
           <% end %>
+          <tr class="activities">
+            <td>Activities:
+            <% @activities.each do |activity| %>
+                <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>
+            <% end %>
+            </td>
+          </tr>
       </tbody>
     </table>
-
-
-
-  <% @activities.each do |activity| %>
-      <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>
-  <% end %>
+  </div>
+</div>
 </div>
 
 
+
+
+</div>
+
+</div>

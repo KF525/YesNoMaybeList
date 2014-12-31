@@ -1,0 +1,10 @@
+<h2><%= @answer.name%></h2>
+<div>
+  <%= @answer.status %>
+</div>
+<div>
+  <%= @answer.notes %>
+</div>
+
+<%= button_to "(delete)", answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :delete %>
+<%= link_to "(change)", edit_answer_path(:id => params[:answer_id], :relationship_id => params[:id]) %>

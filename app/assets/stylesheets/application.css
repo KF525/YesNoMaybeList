@@ -16,19 +16,8 @@
 
 body {
   font-size: 100%;
-  color: #E2BC30;
+  color: white;
   font-family: 'Cedarville Cursive', cursive;
-}
-
-.desk {
-  background-image: url(dark-wood-background.jpg);
-}
-
-.paper {
-  background-image: url(lined-paper-background-yellow.jpg);
-  background-size: 100%;
-  width: 60%;
-  min-height: 2000px;
 }
 
 h1 {
@@ -91,5 +80,25 @@ a:hover, a:focus {
 
 /* TABLES */
 thead {
-  font-size: 80%;
+  font-size: 125%;
+}
+
+.activities {
+    margin-top: 50px;
+}
+
+.answered {
+    text-decoration: line-through;
+}
+
+.desk {
+    background-image: url(dark-wood-background.jpg);
+    min-height: 800px;
+}
+
+.paper {
+    background-image: url(lined-paper-background-yellow.jpg);
+    background-size: 100%;
+    width: 60%;
+    min-height: 600px;
 }
