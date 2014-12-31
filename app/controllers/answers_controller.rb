@@ -21,6 +21,12 @@ class AnswersController < ApplicationController
   end
 
   def update
-
+    @answer = Answer.find(params[:id])
+    @answer.update(params.require(:answer).permit(:notes, :status))
+    if @answer.save
+      redirect_to relationship_path(params[:relationship_id])
+    else
+      redirect_to relationship_path(params[:relationship_id])
+    end
   end
 end

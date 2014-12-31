@@ -1,6 +1,6 @@
 <h2><%= @answer.name %></h2>
 
-<%= form_for @answer, url: relationship_answers_path(@activity, :relationship_id => params[:relationship_id]), method: :post do |f| %>
+<%= form_for @answer, url: answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :patch do |f| %>
     <div class="form-group">
       <%= f.radio_button(:status, "yes") %>
       <%= f.label :yes %>
