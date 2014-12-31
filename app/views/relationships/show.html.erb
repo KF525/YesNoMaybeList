@@ -27,7 +27,11 @@
               <tr class="answers">
                   <td>
                     <%= answer.name %>:
-                    <%= link_to answer.status, answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
+                    <% if answer.answered_by_current_user?(current_user, params[:id]) %>
+                        <%= link_to answer.status, answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
+                    <% else %>
+                        <%= answer.status %>
+                    <% end %>
                   </td>
               </tr>
               <% end %>

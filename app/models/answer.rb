@@ -9,4 +9,12 @@ class Answer < ActiveRecord::Base
     end
     relationship_answers.flatten
   end
+
+  def user_relationship(relationship_id)
+    UserRelationship.find_by(relationship_id: relationship_id)
+  end
+
+  def answered_by_current_user?(current_user, relationship_id)
+    user_relationship(relationship_id).user_id == current_user.id
+  end
 end

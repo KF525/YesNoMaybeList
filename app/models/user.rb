@@ -32,11 +32,20 @@ class User < ActiveRecord::Base
     self.admin
   end
 
-  def self.user_relationships(current_user)
+  def self.user_relationships(current_user) #returns all users user_relationships
     UserRelationship.where(user_id: current_user.id)
   end
 
-  def self.answers(current_user)
+  def self.user_relationship(current_user, relationship_id) #returns single user_relationship
+    UserRelationship.find_by("user_id = ? AND relationship_id = ?", current_user, relationship_id)
+  end
+
+  def self.all_answers(current_user) #returns all user answers for all relationships
     Answer.where(User.user_relationships(current_user))
+  end
+
+  def self.answers(current_user, relationship_id) #returns user answers for a specific relationship
+    user_relationship = self.user_relationship(current_user, relationship_id)
+    Answer.where("user_relationship_id = ?", user_relationship.id)
   end
 end
