@@ -11,6 +11,7 @@
 <body class="desk">
   <div class=""container-fluid">
   <header>
+    <div class="bar">
     <nav>
         <% if current_user %>
           <%= link_to "Profile", user_path(current_user.id) %>
@@ -20,6 +21,7 @@
     </nav>
     </div>
   </header>
+  </div>
 
 <%= yield %>
 
