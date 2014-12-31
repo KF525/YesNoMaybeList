@@ -8,16 +8,20 @@ class Relationship < ActiveRecord::Base
     user_lists.flatten
   end
 
-  def self.user_relationships(current_user) #finds all user_relationships associated with user
+  def self.user_relationships_by_relationship(relationship_id) #finds all user_relationships associated with relationship
+    UserRelationship.where("relationship_id = ?", relationship_id)
+  end
+
+  def self.user_relationships_by_user(current_user) #finds all user_relationships associated with user
     UserRelationship.where("user_id = ?", current_user)
   end
 
-  def self.user_relationship(relationship_id, current_user) #finds specific user_relationship
+  def self.find_relationship(relationship_id, current_user) #finds specific user_relationship
     UserRelationship.find_by("relationship_id = ? AND user_id = ?", relationship_id, current_user)
   end
 
   def belongs_to_current_user?(relationship_id, current_user) #checks that relationship/list belongs to current_user
-      user_relationship = Relationship.user_relationship(relationship_id, current_user)
+      user_relationship = Relationship.find_relationship(relationship_id, current_user)
     if user_relationship == nil
       false
     else
