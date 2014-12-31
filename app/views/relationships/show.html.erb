@@ -21,12 +21,13 @@ Invite your partner!
       </tbody>
     </table>
 
-  <%# if @answers %>
-      <%# @answers.each do |answer| %>
-          <%#= answer.name %>
-          <%#= answer.status %>
-      <%# end %>
-  <%# end %>
+  <% unless @answers.empty? %>
+      <% @answers.each do |answer| %>
+          <%= answer.name %>
+          <%= answer.status %>
+          <%= link_to "Edit Answer", edit_answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
+      <% end %>
+  <% end %>
 
   <% @activities.each do |activity| %>
       <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>

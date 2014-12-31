@@ -20,6 +20,7 @@ class RelationshipsController < ApplicationController
     @answers = Answer.relationship_answers(params[:id])
     #@activities = Activity.not_answered(params[:id])
     @activities = Activity.all
+    #raise
   end
 
   def destroy
