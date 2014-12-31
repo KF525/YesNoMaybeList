@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to relationship_path(params[:relationship_id])
     else
-      redirect_to relationship_path(params[:relationship_id])
+      render :new
     end
   end
 
@@ -27,6 +27,15 @@ class AnswersController < ApplicationController
       redirect_to relationship_path(params[:relationship_id])
     else
       redirect_to relationship_path(params[:relationship_id])
+    end
+  end
+
+  def destroy
+    @answer = Answer.find(params[:id])
+    if @answer.destroy
+      redirect_to relationship_path(params[:relationship_id])
+    else
+      render :edit
     end
   end
 end

@@ -15,3 +15,4 @@
       <%= f.submit :submit, class: "btn" %>
     </div>
 <% end %>
+<%= button_to "Delete Answer", answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :delete %>

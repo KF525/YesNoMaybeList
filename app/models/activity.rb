@@ -8,6 +8,6 @@ class Activity < ActiveRecord::Base
     @answers.each do |answer|
       not_answered << Activity.all.where.not(name: answer.name)
     end
-    raise
+
   end
 end
