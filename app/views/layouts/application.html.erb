@@ -12,6 +12,7 @@
   <header>
     <nav>
         <% if current_user %>
+          <%= link_to "Profile", user_path(current_user.id) %>
           Logged in as <%= current_user.email%>
           <%= link_to "Log Out", logout_path, method: :delete %>
         <% else %>
@@ -19,7 +20,7 @@
           <%= link_to "Log In", login_path %>
         <% end %>
     </nav>
-    <h1>The Yes, No, Maybe List</h1>
+
   </header>
 
 <%= yield %>

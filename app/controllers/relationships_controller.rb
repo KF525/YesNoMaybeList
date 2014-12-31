@@ -17,8 +17,9 @@ class RelationshipsController < ApplicationController
     #bug with user_relationship here
     @relationship = Relationship.find(params[:id])
     @partners = User.partners(params[:id])
-    @answers = Answer.where(user_relationship_id: params[:id])
-    @activities = Activity.all #all activities that haven't been answered: Activity.where.not(name:
+    @answers = Answer.relationship_answers(params[:id])
+    #@activities = Activity.not_answered(params[:id])
+    @activities = Activity.all
   end
 
   def destroy

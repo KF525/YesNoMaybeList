@@ -18,7 +18,10 @@ body {
   font-size: 100%;
   color: #E2BC30;
   font-family: 'Cedarville Cursive', cursive;
-  background-image: url();
+}
+
+.desk {
+  background-image: url(dark-wood-background.jpg);
 }
 
 .paper {

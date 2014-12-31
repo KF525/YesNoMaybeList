@@ -1,6 +1,6 @@
 <h2><%= @activity.name %></h2>
 
-<%= form_for @answer, url: relationship_answers_path(@actvity, :relationship_id => params[:relationship_id]), method: :post do |f| %>
+<%= form_for @answer, url: relationship_answers_path(@activity, :relationship_id => params[:relationship_id]), method: :post do |f| %>
       <div class="form-group">
         <%= f.radio_button(:status, "yes") %>
         <%= f.label :yes %>
@@ -12,6 +12,7 @@
       <div class="form-group">
         <div><%= f.label :notes_go_here %></div>
         <div><%= f.text_area :notes %></div>
+        <%= f.hidden_field :name, :value => @activity.name %>
         <%= f.submit :submit, class: "btn" %>
       </div>
 <% end %>

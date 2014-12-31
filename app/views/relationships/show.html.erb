@@ -1,7 +1,7 @@
 <!-- show all partners names with correct grammatical syntax-->
-
-
 <!-- show only if one user is associated with the list allow to invite another user to join list -->
+
+<h1>The Yes, No, Maybe List</h1>
 Invite your partner!
 <%= form_tag password_reset_path, method: :post do %>
     <%= text_field_tag :email, params[:email], placeholder: "Partner's Email" %>
@@ -21,13 +21,16 @@ Invite your partner!
       </tbody>
     </table>
 
-    <% @answers.each do |answer| %>
-        <%= answer.name %>
-    <% end %>
+  <%# if @answers %>
+      <%# @answers.each do |answer| %>
+          <%#= answer.name %>
+          <%#= answer.status %>
+      <%# end %>
+  <%# end %>
 
-    <% @activities.each do |activity| %>
-        <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>
-    <% end %>
+  <% @activities.each do |activity| %>
+      <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>
+  <% end %>
 </div>
 
 
