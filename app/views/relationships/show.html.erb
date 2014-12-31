@@ -18,16 +18,23 @@ Invite your partner!
       <% end %>
       </thead>
       <tbody>
+          <% unless @answers.empty? %>
+              <% @answers.each do |answer| %>
+              <tr class="answers">
+                  <td>
+                    <%= answer.name %>
+                    <%= answer.status %>
+                    <% if current_user %>
+                        <%= link_to "Edit Answer", edit_answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
+                    <% end %>
+                  </td>
+              </tr>
+              <% end %>
+          <% end %>
       </tbody>
     </table>
 
-  <% unless @answers.empty? %>
-      <% @answers.each do |answer| %>
-          <%= answer.name %>
-          <%= answer.status %>
-          <%= link_to "Edit Answer", edit_answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
-      <% end %>
-  <% end %>
+
 
   <% @activities.each do |activity| %>
       <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>

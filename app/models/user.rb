@@ -36,4 +36,7 @@ class User < ActiveRecord::Base
     UserRelationship.where(user_id: current_user.id)
   end
 
+  def self.answers(current_user)
+    Answer.where(User.user_relationships(current_user))
+  end
 end
