@@ -13,34 +13,35 @@
  *= require_tree .
  *= require_self
  */
-/*
+
+/* GLOBAL */
+
 body {
-  font-size: 100%;
-  color: white;
-  font-family: 'Cedarville Cursive', cursive;
+  font-family: Futura, Helvetica;
+  background-image: url(light-wood-background.jpg);
 }
 
 h1 {
-  font-size: 150%;
-  font-family: Futura, Helvetica;
-  color: #E2BC30;
+  font-family: 'Cedarville Cursive', cursive;
+  color: #444;
 }
 
 h2 {
-  font-size: 125%;
-  font-family: Futura, Helvetica;
-  color: #E2BC30;
+  font-family: 'Cedarville Cursive', cursive;
+  color: #444;
+  text-align: center;
 }
 
 h3 {
-  font-size: 100%;
   font-family: Futura, Helvetica;
-  color: #E2BC30;
-}
-.gray-back {
-  opacity: .5;
+  color: #444;
 }
 
+header {
+  margin-top: 15px;
+  margin-bottom: 100px;
+  padding-left: 20px;
+}
 /* LOG IN */
 /*
 .reset-box-style {
@@ -49,40 +50,59 @@ h3 {
   margin: 10%;
 }
 
+.gray-back {
+  opacity: .5;
+}
+
 /* LINKS */
-/*
+
 a {
-  color: orangered;
-  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  font-family: 'Cedarville Cursive', cursive;
 }
 
 a:hover, a:focus {
-  color: #E2BC30;
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+  color: orangered;
 }
 
 /* BUTTONS */
-/*
+
 .btn {
-    width:15%;
+    width:25%;
     height:55%;
     border-radius: 10%;
-    font-size: 80%;
-    display:inline;
-    background: linear-gradient(to right,#C72B0C,#BD2716);
+    display: inline-block;
+    background: linear-gradient(to right,#444, black);
     border: none;
     color: white;
+    text-align: center;
 }
 
 .btn:hover, .btn:focus {
-    background: linear-gradient(to right,#C7901C,orange);
+    background: linear-gradient(to right,#C72B0C,#BD2716);
     color: white;
     border: none;
 }
 
 /* TABLES */
+
 /*
-thead {
+   <% @partners.each do |partner| %>
+            <tr class="partners">
+              <td><%= partner.name %></td>
+            </tr>
+        <% end %>
+*/
+
+thead tr {
   font-size: 125%;
+  text-align: center;
 }
 
 .activities {
@@ -93,18 +113,20 @@ thead {
     text-decoration: line-through;
 }
 
-.desk {
-    background-image: url(dark-wood-background.jpg);
-    min-height: 800px;
-}
-
 .paper {
     background-image: url(lined-paper-background-yellow.jpg);
     background-size: 100%;
     width: 60%;
     min-height: 600px;
+    min-width: 400px;
+    margin-bottom: 25px;
+    margin: auto;
 }
-*/
+
+.invite {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 
 a.disabled {
     pointer-events: none;

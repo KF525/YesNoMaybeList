@@ -3,29 +3,35 @@
 <% if @relationship.belongs_to_current_user?(params[:id], current_user) %>
 <div class="desk container">
   <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="col-lg-3 col-md-3 col-sm-12">
     <h1>The Yes, No, Maybe List</h1>
-    Invite your partner!
+    <h4>A Sexual Inventory Stocklist</h4>
+    <div class="invite">
+      Invite your partner!
     <%= form_tag password_reset_path, method: :post do %>
         <%= text_field_tag :email, params[:email], placeholder: "Partner's Email" %>
         <%= submit_tag "Invite", class: "btn" %>
     <% end %>
     </div>
-  </div>
-  <div class="row paper table-responsive">
-    <div class="col-lg-8 col-m-8 col-sm-8">
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 paper table-responsive">
+      <h2><%=@relationship.name%></h2>
       <table class="table">
         <thead>
-        <% @partners.each do |partner| %>
-          <tr class="partners">
-            <td><%= partner.name %></td>
-          </tr>
-        <% end %>
+            <tr class="col-lg-3 col-md-3">
+              <td>Yes</td>
+            </tr>
+            <tr class="col-lg-3 col-md-3">
+              <td >No</td>
+            </tr>
+            <tr class="col-lg-3 col-md-3">
+              <td>Maybe</td>
+            </tr>
         </thead>
         <tbody>
-          <% unless @answers.empty? %>
-              <% @answers.each do |answer| %>
-              <tr class="answers">
+        <% unless @answers.empty? %>
+            <% @answers.each do |answer| %>
+                <tr class="answers">
                   <td>
                     <%= answer.name %>:
                     <% if answer.answered_by_current_user?(current_user, params[:id]) %>
@@ -34,22 +40,23 @@
                         <%= answer.status %>
                     <% end %>
                   </td>
-              </tr>
-              <% end %>
-          <% end %>
-          <tr class="activities">
-            <td>Activities:
+                </tr>
+            <% end %>
+        <% end %>
+        <tr class="activities">
+          <td>Activities:
             <% @activities.each do |activity| %>
                 <% if %>
-                <%= link_to activity.name,
-                new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
+                    <%= link_to activity.name,
+                                new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
                 <% end %>
-              <% end %>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
+            <% end %>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+   </div>
+</div>
 </div>
 </div>
 <% else %>
