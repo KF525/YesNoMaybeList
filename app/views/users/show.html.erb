@@ -1,3 +1,4 @@
+<div class="container">
 <h2><%= @user.name %>'s Profile Page</h2>
 
 <h3>Current Lists:</h3>
@@ -8,6 +9,7 @@
 
 <h3>Start new list</h3>
 <%=form_for @new_list do |f| %>
- <%= f.text_field :name %>
- <%= f.submit :create %>
+ <%= f.text_field :name, placeholder: "list name" %>
+ <%= f.submit :create, class: "btn" %>
 <% end %>
+</div>
