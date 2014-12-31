@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @new_list = Relationship.new
-    @user_lists = Relationship.user_lists(current_user)
+    @user_lists = Relationship.belonging_to_user(current_user)
     @user = User.find(current_user.id)
   end
 
