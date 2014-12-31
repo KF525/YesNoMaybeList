@@ -14,6 +14,34 @@
 //= require jquery_ujs
 //= require_tree .
 
+// SESSIONS: Log In
+
+$(function() {
+    $(".login").click(function(event) {
+        event.preventDefault();
+        var loginForm = '<div>' +
+            '<form accept-charset="UTF-8" action="/sessions" method="post">' +
+            '<div style="display:none"><input name="utf8" type="hidden" value="✓">' +
+            '<input name="authenticity_token" type="hidden" value="hnR+Y3/CAJa9trXUdZWLfQw6LkKHPO39/k6+g/Z0gjc=">' +
+            '</div><input id="email" name="email" type="text" oldautocomplete="remove" autocomplete="off">' +
+            '<input name="password" placeholder="password" type="password">' +
+            '<input name="remember_me" type="checkbox" value="1">'
+            '<label for="remember_me">Remember me</label>'
+            '<a class="reset-password" href="/reset_password">'Forgot Password?</a>
+            '<input name="commit" type="submit" value="Reset Password"></form><a href="#" class="remove-field">Close</a></div>';
+            '<input name="commit" type="submit" value="Log In">'
+        $(".login-info").append(loginForm);
+
+        $(".password-form").on("click", ".remove-field", function(event) {
+            event.preventDefault();
+
+            $(this).parent('div').remove();
+            $(".reset-password").show();
+            $(".log-in").children('form').removeClass("gray-back");
+        });
+    });
+});
+
 
 // SESSIONS: Password Reset
 
@@ -36,3 +64,4 @@ $(function() {
     });
   });
 });
+

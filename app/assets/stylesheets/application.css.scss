@@ -43,6 +43,10 @@ header {
   padding-left: 20px;
 }
 /* LOG IN */
+
+.authenticate {
+  padding-top: 50px;
+}
 /*
 .reset-box-style {
   background-color: orangered;
@@ -60,15 +64,14 @@ a {
   color: #444;
   font-weight: bold;
   text-decoration: underline;
-  text-decoration-style: dashed;
+  text-decoration-style: dotted;
   font-family: 'Cedarville Cursive', cursive;
 }
 
 a:hover, a:focus {
-  color: #444;
   font-weight: bold;
   text-decoration: none;
-  color: orangered;
+  color: #b71d1d;
 }
 
 /* BUTTONS */
