@@ -2,7 +2,7 @@ class Relationship < ActiveRecord::Base
   has_many :user_relationships
 
   def self.belonging_to_user(current_user) #finds all relationships for a given user
-    user_lists = Relationship.user_relationships(current_user).collect do |user_relationship|
+    user_lists = Relationship.user_relationships_by_user(current_user).collect do |user_relationship|
       Relationship.where(id: user_relationship.relationship_id)
     end
     user_lists.flatten

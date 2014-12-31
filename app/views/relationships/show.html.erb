@@ -3,7 +3,7 @@
 <% if @relationship.belongs_to_current_user?(params[:id], current_user) %>
 <div class="desk container">
   <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12">
     <h1>The Yes, No, Maybe List</h1>
     <h4>A Sexual Inventory Stocklist</h4>
     <div class="invite">
@@ -14,7 +14,7 @@
     <% end %>
     </div>
     </div>
-    <div class="col-lg-9 col-md-9 col-sm-12 paper table-responsive">
+    <div class="col-lg-8 col-md-8 col-sm-12 paper table-responsive">
       <h2><%=@relationship.name%></h2>
       <table class="table">
         <thead>
