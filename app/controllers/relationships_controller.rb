@@ -1,7 +1,7 @@
 class RelationshipsController < ApplicationController
 
   def create
-    relationship = Relationship.new
+    relationship = Relationship.new(params.require(:relationship).permit(:name))
     if relationship.save
       user_relationship = UserRelationship.new
       user_relationship.user_id = current_user.id

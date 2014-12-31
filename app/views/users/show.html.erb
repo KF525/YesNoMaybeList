@@ -2,7 +2,12 @@
 
 <h3>Current Lists:</h3>
 <% @user_lists.each do |list| %>
-    <%= link_to list.name, relationship_path(list.id) %>
+   <div><%= link_to list.name, relationship_path(list.id) %></div>
 <% end %>
 
-<h3><%= link_to "Start a New List", relationships_path, method: :post %></h3>
+
+<h3>Start new list</h3>
+<%=form_for @new_list do |f| %>
+ <%= f.text_field :name %>
+ <%= f.submit :create %>
+<% end %>

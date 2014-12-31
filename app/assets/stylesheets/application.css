@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+/*
 body {
   font-size: 100%;
   color: white;
@@ -39,10 +39,10 @@ h3 {
 }
 .gray-back {
   opacity: .5;
-  /*make inactive? */
 }
 
 /* LOG IN */
+/*
 .reset-box-style {
   background-color: orangered;
   padding: 10%;
@@ -50,6 +50,7 @@ h3 {
 }
 
 /* LINKS */
+/*
 a {
   color: orangered;
   text-decoration: none;
@@ -60,7 +61,7 @@ a:hover, a:focus {
 }
 
 /* BUTTONS */
-
+/*
 .btn {
     width:15%;
     height:55%;
@@ -79,6 +80,7 @@ a:hover, a:focus {
 }
 
 /* TABLES */
+/*
 thead {
   font-size: 125%;
 }
@@ -101,4 +103,10 @@ thead {
     background-size: 100%;
     width: 60%;
     min-height: 600px;
+}
+*/
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
 }

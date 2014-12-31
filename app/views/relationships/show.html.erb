@@ -35,7 +35,8 @@
           <tr class="activities">
             <td>Activities:
             <% @activities.each do |activity| %>
-                <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id]) %>
+                <%= link_to activity.name,
+                new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
             <% end %>
             </td>
           </tr>
