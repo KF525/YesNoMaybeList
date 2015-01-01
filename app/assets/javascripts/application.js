@@ -29,7 +29,7 @@ $(function() {
             '<label for="remember_me">Remember me</label>'
             '<a class="reset-password" href="/reset_password">'Forgot Password?</a>
             '<input name="commit" type="submit" value="Reset Password"></form><a href="#" class="remove-field">Close</a></div>';
-            '<input name="commit" type="submit" value="Log In">'
+            '<input name="commit" type="submit" value="Log In" class="btn">'
 
         $(".login-info").append(loginForm);
 

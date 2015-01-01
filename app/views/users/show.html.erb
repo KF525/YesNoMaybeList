@@ -1,15 +1,42 @@
-<div class="container">
-<h2><%= @user.name %>'s Profile Page</h2>
+<% if @current_user %>
+    <h2><%= @user.name %>'s Profile Page</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="new-list">
+          Start new list
+          <%=form_for @new_list do |f| %>
+              <%= f.text_field :name, placeholder: "list name" %>
+              <%= f.submit :create, class: "btn" %>
+          <% end %>
+        </div>
+      </div>
 
-<h3>Current Lists:</h3>
-<% @user_lists.each do |list| %>
-   <div><%= link_to list.name, relationship_path(list.id) %></div>
-<% end %>
-
-
-<h3>Start new list</h3>
-<%=form_for @new_list do |f| %>
- <%= f.text_field :name, placeholder: "list name" %>
- <%= f.submit :create, class: "btn" %>
-<% end %>
+      <div class="col-lg-8 col-md-8 col-sm-12 paper table-responsive">
+        <table class="table">
+          <thead>
+              <tr>
+                <td><h3>Current Lists:</h3></td>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>
+                    <% @user_lists.each do |list| %>
+                     <li><%= link_to list.name, relationship_path(list.id) %></li>
+                  <% end %>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>
+<% else %>
+    <h2>Sorry! You can only look at lists you are associated with.</h2>
+<% end %>
+
+
+
+
+
+
