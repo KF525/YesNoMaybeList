@@ -9,7 +9,7 @@
     <div class="invite">
       Invite your partner!
     <%= form_tag password_reset_path, method: :post do %>
-        <%= text_field_tag :email, params[:email], placeholder: "Partner's Email" %>
+        <%= text_field_tag :email, params[:email], placeholder: "email address" %>
         <%= submit_tag "Invite", class: "btn" %>
     <% end %>
     </div>
@@ -60,5 +60,5 @@
 </div>
 </div>
 <% else %>
-    You can only look at lists you are associated with.
+    <h2>Sorry! You can only look at lists you are associated with.</h2>
 <% end %>

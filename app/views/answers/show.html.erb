@@ -1,10 +1,12 @@
+
+  <div class="center">
 <h2><%= @answer.name%></h2>
-<div>
-  <%= @answer.status %>
-</div>
-<div>
+<h3><%= @answer.status %></h3>
+<div>Notes:
   <%= @answer.notes %>
 </div>
 
-<%= button_to "(delete)", answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :delete %>
-<%= link_to "(change)", edit_answer_path(:id => params[:answer_id], :relationship_id => params[:id]) %>
+<%= button_to "Delete", answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :delete, class: "btn" %>
+<%= link_to "Update", edit_answer_path(:id => params[:answer_id], :relationship_id => params[:id]), class: "btn" %>
+  </div>
+</div>
