@@ -30,15 +30,9 @@ $(function() {
             '<a class="reset-password" href="/reset_password">'Forgot Password?</a>
             '<input name="commit" type="submit" value="Reset Password"></form><a href="#" class="remove-field">Close</a></div>';
             '<input name="commit" type="submit" value="Log In">'
+
         $(".login-info").append(loginForm);
 
-        $(".password-form").on("click", ".remove-field", function(event) {
-            event.preventDefault();
-
-            $(this).parent('div').remove();
-            $(".reset-password").show();
-            $(".log-in").children('form').removeClass("gray-back");
-        });
     });
 });
 
