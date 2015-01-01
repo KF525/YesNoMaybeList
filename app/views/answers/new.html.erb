@@ -10,9 +10,11 @@
         <%= f.label :maybe %>
       </div>
       <div class="form-group">
-        <div><%= f.label :notes_go_here %></div>
+        <div><%= f.label :notes, placeholder: "Notes go here. This space is for more thoughts on why your answer is yes, no, or maybe. Taking detailed notes will help when you if and when you discuss your list with your partner or partners." %></div>
         <div><%= f.text_area :notes %></div>
         <%= f.hidden_field :name, :value => @activity.name %>
         <%= f.submit :submit, class: "btn" %>
       </div>
 <% end %>
+
+<%= link_to "Back to list", relationship_path(params[:relationship_id]), class: "btn" %>
