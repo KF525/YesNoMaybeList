@@ -50,8 +50,13 @@ header {
   padding-left: 20px;
 }
 
-.center {
-  margin: 0 auto;
+.outer {
+  width: 100%;
+  text-align:center;
+}
+
+.inner {
+  display: inline-block;
 }
 /* LOG IN */
 
@@ -148,9 +153,8 @@ thead tr {
   margin-bottom: 25px;
 }
 
-
 .notes {
-  width:90%;
+  width:400px;
   height: 275px;
   padding-left: 0;
   border: 1px solid #ccc;
