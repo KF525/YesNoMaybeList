@@ -1,7 +1,7 @@
 <% if @current_user %>
-    <h2><%= @user.name %>'s Profile Page</h2>
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12">
+        <h1><%= @user.name %>'s Yes, No, Maybe Profile Page</h1>
         <div class="new-list">
           Start new list
           <%=form_for @new_list do |f| %>
@@ -22,7 +22,10 @@
               <tr>
                 <td>
                     <% @user_lists.each do |list| %>
-                     <li><%= link_to list.name, relationship_path(list.id) %></li>
+                     <li>
+                       <%= link_to list.name, relationship_path(list.id) %>
+                       <!-- Add all the users associated with each list %>
+                     </li>
                   <% end %>
                 </td>
               </tr>
