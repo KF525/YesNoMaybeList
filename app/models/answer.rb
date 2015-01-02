@@ -19,9 +19,11 @@ class Answer < ActiveRecord::Base
   end
 
   def self.no_answers(relationship_id)
+    Answer.relationship_answers(relationship_id).select { |answer| answer.status == "no"}
   end
 
   def self.maybe_answers(relationship_id)
+    Answer.relationship_answers(relationship_id).select { |answer| answer.status == "maybe"}
   end
 
   def self.user_and_relationship_answers(relationship_id, current_user) #finds all answers made by a user for specific relationship

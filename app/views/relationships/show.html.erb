@@ -24,41 +24,41 @@
           <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
       <% end %>
     </div>
-  </div>
+    </div>
     <div class="col-lg-8 col-md-8 col-sm-12 paper table-responsive">
-      <h2><%=@relationship.name%></h2>
-      <table class="table">
-        <thead>
-            <tr class="col-lg-3 col-md-3">
-              <td>Yes</td>
-            </tr>
-            <tr class="col-lg-3 col-md-3">
-              <td >No</td>
-            </tr>
-            <tr class="col-lg-3 col-md-3">
-              <td>Maybe</td>
-            </tr>
-        </thead>
-        <tbody>
-        <% unless @answers.empty? %>
-            <% @answers.each do |answer| %>
-                <tr class="answers">
-                  <td>
-                    <%= answer.name %>:
+     <h2><%=@relationship.name%></h2>
+            <% unless @yes_answers.empty? %>
+            <h3>Yes:</h3>
+                <% @yes_answers.each do |answer| %>
                     <% if answer.answered_by_current_user?(current_user, params[:id]) %>
-                        <%= link_to answer.status, answer_path(:answer_id => answer.id, :relationship_id => params[:id]) %>
+                        <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
                     <% else %>
-                        <%= answer.status %>
+                        <%= answer.name %>
                     <% end %>
-                  </td>
-                </tr>
+                <% end %>
+            <% end %>
+            <% unless @no_answers.empty? %>
+            <h3>No:</h3>
+                <% @no_answers.each do |answer| %>
+                    <% if answer.answered_by_current_user?(current_user, params[:id]) %>
+                    <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
+                <% else %>
+                    <%= answer.name %>
+                <% end %>
             <% end %>
         <% end %>
-        </tbody>
-      </table>
-   </div>
-</div>
-</div>
+        <h3>Maybe:</h3>
+        <% @maybe_answers.each do |answer| %>
+          <% if answer.answered_by_current_user?(current_user, params[:id]) %>
+              <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
+          <% else %>
+              <%= answer.name %>
+              <%= User.created_answer(answer) %>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 <% else %>
-    <h2>Sorry! You can only look at lists you are associated with.</h2>
+  <h2>Sorry! You can only look at lists you are associated with.</h2>
 <% end %>
+
