@@ -48,7 +48,7 @@ $(function() {
 $(function() {
   $(".reset-password").click(function(event) {
     event.preventDefault();
-    var resetPasswordForm = '<div><form accept-charset="UTF-8" action="/reset_password" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="hnR+Y3/CAJa9trXUdZWLfQw6LkKHPO39/k6+g/Z0gjc="></div><input id="email" name="email" type="text" oldautocomplete="remove" autocomplete="off"><input name="commit" type="submit" value="Reset Password"></form><a href="#" class="remove-field">Close</a></div>';
+    var resetPasswordForm = '<div><form accept-charset="UTF-8" action="/reset_password" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="hnR+Y3/CAJa9trXUdZWLfQw6LkKHPO39/k6+g/Z0gjc="></div><input id="email" name="email" type="text" oldautocomplete="remove" autocomplete="off"><div><input name="commit" type="submit" value="Reset Password" class="btn"></div></form><a href="#" class="remove-field">Close Reset Password</a></div>';
     $(".reset-password").hide();
     $(".password-form").append(resetPasswordForm);
     $(".password-form").addClass("reset-box-style");

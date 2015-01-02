@@ -1,21 +1,34 @@
 <h2>Log into Your Account</h2>
-
-<div class="log-in">
+<div class="outer">
+  <div class="inner">
+    <div class="log-in">
 <%= form_tag sessions_path do %>
+   <div>
   <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+   </div>
+          <div>
   <%= password_field_tag :password, params[:password], placeholder: "Password" %>
-  <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+          </div>
+          <div>
+            <%= check_box_tag :remember_me, 1, params[:remember_me] %>
   <%= label_tag :remember_me %>
+          </div>
+          <div>
   <%= link_to "Forgot Password?", password_reset_path, class: "reset-password" %>
+          </div>
+          <div class="password-form">
+          </div>
+          <div>
   <%= submit_tag "Log In", class: "btn" %>
+          </div>
 <% end %>
-</div>
+    </div>
 
-<div class="password-form">
-</div>
 
-<div>
-  Don't have an account? <%= link_to "Create an Account", signup_path %>
-</div>
 
+    <div>
+      Don't have an account? <%= link_to "Create an Account", signup_path %>
+    </div>
+  </div>
+</div>
 
