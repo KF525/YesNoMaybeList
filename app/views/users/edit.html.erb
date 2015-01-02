@@ -1,0 +1,16 @@
+<h2>Update Account</h2>
+
+<div>
+  <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+          <% @user.errors.full_messages.each do |message| %>
+              <%= message %>
+          <% end %>
+      <% end %>
+      <%= f.text_field :name, placeholder: "Name" %>
+      <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.password_field :password, placeholder: "Password" %>
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+      <%= f.submit class: "btn"%>
+  <% end %>
+</div>

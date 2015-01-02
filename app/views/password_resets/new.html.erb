@@ -4,9 +4,11 @@
   <div class="inner">
     Enter in your email address and we will email you a link to reset your password.
     Please be patient. This may take a few minutes.
-<%= form_tag password_reset_path, method: :post do %>
-    <%= text_field_tag :email, params[:email], placeholder: "email" %>
-  <%= submit_tag "Reset Password", class: "btn" %>
-<% end %>
-</div>
+    <div class="password-box">
+    <%= form_tag password_reset_path, method: :post do %>
+        <%= text_field_tag :email, params[:email], placeholder: "email" %>
+        <%= submit_tag "Reset Password", class: "btn" %>
+    <% end %>
+    </div>
+  </div>
 </div>

@@ -60,6 +60,7 @@ header {
 .inner {
   display: inline-block;
 }
+
 /* LOG IN */
 
 .authenticate {
@@ -71,18 +72,6 @@ header {
   font-family: Futura, Helvetica;
   font-size: 15px;
   text-align: center;
-}
-
-/*
-
-.reset-box-style {
-  background-color: orangered;
-  padding: 10%;
-  margin: 10%;
-}
-
-.gray-back {
-  opacity: .5;
 }
 
 /* LINKS */
@@ -125,6 +114,12 @@ a:hover, a:focus {
     background: linear-gradient(to right,#C72B0C,#BD2716);
     color: white;
 }
+/* PASSWORD RESET */
+
+.password-box {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
 
 /* USER SHOW PAGE */
 
@@ -149,8 +144,6 @@ a:hover, a:focus {
   font-family: Futura, Helvetica;
   display: inline;
 }
-
-/* TABLES */
 
 thead tr {
   font-size: 125%;
@@ -203,3 +196,17 @@ a.disabled {
     cursor: default;
     text-decoration: line-through;
 }
+
+/*
+
+.reset-box-style {
+  background-color: orangered;
+  padding: 10%;
+  margin: 10%;
+}
+
+.gray-back {
+  opacity: .5;
+}
+
+*/

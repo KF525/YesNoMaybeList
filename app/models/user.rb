@@ -47,4 +47,9 @@ class User < ActiveRecord::Base
     user_relationship = self.user_relationship(current_user, relationship_id)
     Answer.where("user_relationship_id = ?", user_relationship.id)
   end
+
+  def created_answer(answer) #returns user associated with a specific answer
+    user_relationship = UserRelationship.find(answer.user_relationship_id)
+    user = User.find(user_relationship.user_id)
+  end
 end

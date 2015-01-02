@@ -24,6 +24,24 @@ $(function() {
     });
 });
 
+// USER: Update Account
+
+$(function() {
+    $(".update-email")click(function(event) {
+        event.preventDefault();
+        var updateEmail = "TEST"
+        //var updateEmail = '<form accept-charset="UTF-8" action="/sessions" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="hnR+Y3/CAJa9trXUdZWLfQw6LkKHPO39/k6+g/Z0gjc="></div><div><input id="email" name="email" type="text" oldautocomplete="remove" autocomplete="off", placeholder="email"></div><input name="commit" type="submit" value="Update" class="btn"></form>'
+        $(".change-email").append(updateEmail);
+    });
+});
+
+
+
+
+
+
+
+
 
 // SESSIONS: Password Reset
 
