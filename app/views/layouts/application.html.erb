@@ -10,15 +10,14 @@
 </head>
 <body class="desk container container-fluid">
   <header>
-    <div>
     <nav>
         <% if current_user %>
+          <%= link_to "Home", root_path %>
           <%= link_to "Profile", user_path(current_user.id) %>
           Logged in as <%= current_user.name%>
           <%= link_to "Log Out", logout_path, method: :delete %>
         <% end %>
     </nav>
-    </div>
   </header>
 <div class="notice"><%= flash[:notice] %></div>
 <%= yield %>

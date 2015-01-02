@@ -25,10 +25,8 @@ body {
   padding-bottom: 50px;
 }
 
-.bar {
-  background-color: #444;
-  height: 50px;
-  width: 100%;
+footer {
+
 }
 
 h1 {
@@ -74,6 +72,7 @@ header {
   font-size: 15px;
   text-align: center;
 }
+
 /*
 
 .reset-box-style {
@@ -126,7 +125,18 @@ a:hover, a:focus {
     background: linear-gradient(to right,#C72B0C,#BD2716);
     color: white;
 }
-/* PEOPLE */
+
+/* USER SHOW PAGE */
+
+.new-list {
+  padding-top: 25px;
+}
+
+.account {
+  padding-top: 25px;
+}
+
+/* RELATIONSHIP SHOW PAGE */
 
 .partners {
   padding-top: 50px;
