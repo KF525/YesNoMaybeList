@@ -1,7 +1,12 @@
-Reset Password
+<h2>Reset Password</h2>
 
+<div class="outer">
+  <div class="inner">
+    Enter in your email address and we will email you a link to reset your password.
+    Please be patient. This may take a few minutes.
 <%= form_tag password_reset_path, method: :post do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email], placeholder: "Email" %>
-  <%= submit_tag "Reset Password" %>
+    <%= text_field_tag :email, params[:email], placeholder: "email" %>
+  <%= submit_tag "Reset Password", class: "btn" %>
 <% end %>
+</div>
+</div>
