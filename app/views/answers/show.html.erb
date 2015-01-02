@@ -2,10 +2,13 @@
   <div class="inner">
     <h2><%= @answer.name%></h2>
     <h3><%= @answer.status %></h3>
+    <% if @answer.notes.nil? %>
+    <% else %>
     <div>
       Notes:
       <%= @answer.notes %>
     </div>
+    <% end %>
 
     <%= button_to "Delete", answer_path(:id => params[:answer_id], :relationship_id => params[:relationship_id]), method: :delete, class: "btn" %>
     <%= link_to "Update", edit_answer_path(:id => params[:answer_id], :relationship_id => params[:id]), class: "btn" %>

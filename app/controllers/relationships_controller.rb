@@ -16,7 +16,6 @@ class RelationshipsController < ApplicationController
   def show
     @relationship = Relationship.find(params[:id])
     @partners = User.partners(params[:id])
-    #@answers = Answer.relationship_answers(params[:id])
     @yes_answers = Answer.yes_answers(params[:id])
     @no_answers = Answer.no_answers(params[:id])
     @maybe_answers = Answer.maybe_answers(params[:id])
