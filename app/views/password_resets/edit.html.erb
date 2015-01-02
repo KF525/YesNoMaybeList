@@ -8,6 +8,6 @@
   <%= f.password_field :password, placeholder: "New Password" %>
   <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
   <%= f.hidden_field :token, :value => params[:id]%>
-  <%= f.submit "Update Password" %>
+  <%= f.submit "Update Password", class:"btn" %>
 <% end %>
 
