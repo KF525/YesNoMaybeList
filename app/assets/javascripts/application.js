@@ -21,12 +21,6 @@ $(function() {
         event.preventDefault();
         var loginForm = '<div class="outer"><div class="inner"></div><form accept-charset="UTF-8" action="/sessions" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="hnR+Y3/CAJa9trXUdZWLfQw6LkKHPO39/k6+g/Z0gjc="></div><div><input id="email" name="email" type="text" oldautocomplete="remove" autocomplete="off", placeholder="email"></div><div><input name="password" placeholder="password" type="password"></div><div><input name="remember_me" type="checkbox" value="1"><label for="remember_me">Remember me</label></div><div><a class="reset-password" href="/reset_password">Forgot Password?</a></div><input name="commit" type="submit" value="Log In" class="btn"></form></div></div>'
         $(".login-info").append(loginForm);
-
-        $(".login-infor").on("click", ".remove-field", function(event) {
-            event.preventDefault();
-
-            $(this).parent('div').remove();
-        });
     });
 });
 

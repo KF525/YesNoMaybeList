@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       end
         redirect_to user_path(user.id)
     else
-      render :new
+      redirect_to root_path, notice: "Whoops. Unable to find your account. Please try again."
     end
   end
 

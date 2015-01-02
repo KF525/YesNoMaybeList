@@ -68,6 +68,12 @@ header {
   padding-top: 50px;
 }
 
+.notice {
+  color: #006600;
+  font-family: Futura, Helvetica;
+  font-size: 15px;
+  text-align: center;
+}
 /*
 
 .reset-box-style {
@@ -166,7 +172,7 @@ thead tr {
   border: 1px solid #ccc;
 }
 
- input[type="text"] {
+input[type="text"] {
   padding: 5px 0;
   margin-bottom: 10px;
 }
