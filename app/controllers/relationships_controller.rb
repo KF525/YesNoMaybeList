@@ -17,6 +17,7 @@ class RelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     @partners = User.partners(params[:id])
     @answers = Answer.relationship_answers(params[:id])
+    @yes_answers = Answer.yes_answers(params[:id])
     #@activities = Activity.not_answered(params[:id])
     @activities = Activity.all
   end

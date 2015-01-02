@@ -15,7 +15,7 @@ class Answer < ActiveRecord::Base
   # end
 
   def self.yes_answers(relationship_id) #finds all yes answers associated with a relationship/list
-    Answer.relationship_answers(relationship_id).where(status: "yes")
+    Answer.relationship_answers(relationship_id).select { |answer| answer.status == "yes"}
   end
 
   def self.no_answers(relationship_id)
