@@ -7,10 +7,15 @@
   <%= check_box_tag :remember_me, 1, params[:remember_me] %>
   <%= label_tag :remember_me %>
   <%= link_to "Forgot Password?", password_reset_path, class: "reset-password" %>
-  <%= submit_tag "Log In" %>
+  <%= submit_tag "Log In", class: "btn" %>
 <% end %>
 </div>
 
-
 <div class="password-form">
 </div>
+
+<div>
+  Don't have an account? <%= link_to "Create an Account", signup_path %>
+</div>
+
+

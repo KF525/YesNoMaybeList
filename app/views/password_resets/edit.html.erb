@@ -1,6 +1,4 @@
 <h2>Reset Password</h2>
-
-<div>
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
   <% if @user.errors.any? %>
     <% for message in @user.errors.full_messages %>
@@ -12,5 +10,4 @@
   <%= f.hidden_field :token, :value => params[:id]%>
   <%= f.submit "Update Password" %>
 <% end %>
-</div>
 

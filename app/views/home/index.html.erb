@@ -6,13 +6,18 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12">
-        <% if current_user %>
+        <% if current_user.nil? %>
         <div class="authenticate">
           <h2><%= link_to "Sign Up", signup_path %></h2>
           <h2>or</h2>
           <h2><%= link_to "Log In", login_path, class: "login" %></h2>
         </div>
-        <div class="login-info">
+        <div class="outer">
+            <div class="inner">
+                <div class="login-info">
+
+                </div>
+            </div>
         </div>
         <% else %>
             <span class="glyphicon glyphicon-heart"></span>
