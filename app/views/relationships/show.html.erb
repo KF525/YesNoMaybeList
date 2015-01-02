@@ -18,7 +18,13 @@
         <%= submit_tag "Invite", class: "btn" %>
     <% end %>
     </div>
+    <div class="activities">
+      Activities:
+      <% @activities.each do |activity| %>
+          <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
+      <% end %>
     </div>
+  </div>
     <div class="col-lg-8 col-md-8 col-sm-12 paper table-responsive">
       <h2><%=@relationship.name%></h2>
       <table class="table">
@@ -48,16 +54,6 @@
                 </tr>
             <% end %>
         <% end %>
-        <tr class="activities">
-          <td>Activities:
-            <% @activities.each do |activity| %>
-                <% if %>
-                    <%= link_to activity.name,
-                                new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
-                <% end %>
-            <% end %>
-          </td>
-        </tr>
         </tbody>
       </table>
    </div>
