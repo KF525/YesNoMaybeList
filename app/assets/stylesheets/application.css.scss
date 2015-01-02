@@ -164,6 +164,16 @@ thead tr {
   border: 1px solid #ccc;
 }
 
+ input[type="text"] {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+input[type="password"] {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
 a.disabled {
     pointer-events: none;
     cursor: default;
