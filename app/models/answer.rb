@@ -11,9 +11,6 @@ class Answer < ActiveRecord::Base
     relationship_answers.flatten
   end
 
-  # def self.relationship_answers(relationship_id) #finds all answers associated with relationship/list
-  # end
-
   def self.yes_answers(relationship_id) #finds all yes answers associated with a relationship/list
     Answer.relationship_answers(relationship_id).select { |answer| answer.status == "yes"}
   end
@@ -37,5 +34,10 @@ class Answer < ActiveRecord::Base
 
   def answered_by_current_user?(current_user, relationship_id) #checks if specific answer was entered by current_user
     user_relationship(relationship_id).user_id == current_user.id
+  end
+
+  def created_answer #returns user associated with a specific answer
+    user_relationship = UserRelationship.find(user_relationship_id)
+    user = User.find(user_relationship.user_id).name
   end
 end

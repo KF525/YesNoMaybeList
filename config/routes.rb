@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post 'activities',                    to: 'activities#create',          as: :add_activity
   delete 'activities',                  to: 'activities#destroy',         as: :remove_activity
 
-  resources :relationships, only: [:show, :create], shallow: true do
+  resources :relationships, only: [:show, :create, :destroy], shallow: true do
     resources :answers
 
   end

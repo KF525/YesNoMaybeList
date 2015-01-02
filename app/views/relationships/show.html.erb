@@ -24,11 +24,12 @@
           <%= link_to activity.name, new_relationship_answer_path(:activity_id => activity.id, :relationship_id => params[:id])%>
       <% end %>
     </div>
+    <%= button_to "Delete list", relationship_path, method: :delete, class: "btn remove-list" %>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-12 paper table-responsive">
      <h2><%=@relationship.name%></h2>
-            <% unless @yes_answers.empty? %>
             <h3>Yes:</h3>
+            <% unless @yes_answers.empty? %>
                 <% @yes_answers.each do |answer| %>
                     <% if answer.answered_by_current_user?(current_user, params[:id]) %>
                         <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
@@ -37,8 +38,9 @@
                     <% end %>
                 <% end %>
             <% end %>
-            <% unless @no_answers.empty? %>
             <h3>No:</h3>
+            <% unless @no_answers.empty? %>
+
                 <% @no_answers.each do |answer| %>
                     <% if answer.answered_by_current_user?(current_user, params[:id]) %>
                     <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
@@ -48,12 +50,14 @@
             <% end %>
         <% end %>
         <h3>Maybe:</h3>
-        <% @maybe_answers.each do |answer| %>
-          <% if answer.answered_by_current_user?(current_user, params[:id]) %>
-              <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
-          <% else %>
-              <%= answer.name %>
-          <% end %>
+        <% unless @maybe_answers.empty? %>
+            <% @maybe_answers.each do |answer| %>
+                <% if answer.answered_by_current_user?(current_user, params[:id]) %>
+                <%= link_to answer.name, answer_path(:answer_id => answer.id, :relationship_id => params[:id])%>
+                <% else %>
+                <%= answer.name %>
+                <% end %>
+            <% end %>
         <% end %>
     </div>
   </div>
