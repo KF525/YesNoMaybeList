@@ -126,16 +126,21 @@ a:hover, a:focus {
     background: linear-gradient(to right,#C72B0C,#BD2716);
     color: white;
 }
+/* PEOPLE */
+
+.partners {
+  padding-top: 50px;
+  font-family:'Cedarville Cursive', cursive;
+  list-style: none;
+  padding-left: 0;
+}
+
+.partners li {
+  font-family: Futura, Helvetica;
+  display: inline;
+}
 
 /* TABLES */
-
-/*
-   <% @partners.each do |partner| %>
-            <tr class="partners">
-              <td><%= partner.name %></td>
-            </tr>
-        <% end %>
-*/
 
 thead tr {
   font-size: 125%;

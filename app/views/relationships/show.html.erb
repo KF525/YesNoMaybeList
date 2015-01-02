@@ -5,8 +5,14 @@
     <div class="col-lg-4 col-md-4 col-sm-12">
     <h1>The Yes, No, Maybe List</h1>
     <h4>A Sexual Inventory Stocklist</h4>
+    <ul class="partners">
+      People associated with this list:
+      <% @partners.each do |partner| %>
+            <li><%= partner.name %></li>
+      <% end %>
+    </ul>
     <div class="invite">
-      Invite your partner to the list!
+      Invite a partner to the list!
     <%= form_tag password_reset_path, method: :post do %>
         <%= text_field_tag :email, params[:email], placeholder: "email address" %>
         <%= submit_tag "Invite", class: "btn" %>

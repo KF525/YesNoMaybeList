@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :user_relationships
-  
+
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: /\A\S+@.+\.\S+\z/ }
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver
   end
 
-  def self.partners(relationship_id)
+  def self.partners(relationship_id) #finds all users associated with a relationship/list
     @relationships = UserRelationship.where(relationship_id: relationship_id)
     @relationships.collect do |relationship|
       User.find(relationship.user_id)
