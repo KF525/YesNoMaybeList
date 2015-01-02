@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :user_relationships
-
-  #attr_accessible :email, :password, :password_confirmation
+  
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: /\A\S+@.+\.\S+\z/ }
 
